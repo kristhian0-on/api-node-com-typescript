@@ -9,7 +9,7 @@ router.get("/", (_, res) => {
     return res.send('Olá DEV!');
 });
 
-router.post("/cidades", CidadesController.create);
+router.post("/cidades", CidadesController.createBodyValidation, CidadesController.create);
 
 router.post("/teste", (req, res) => {
     console.log(req.body);
