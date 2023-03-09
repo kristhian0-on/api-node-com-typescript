@@ -6,14 +6,14 @@ import { CidadesController } from "./../controllers";
 const router = Router();
 
 router.get("/", (_, res) => {
-    return res.send('Olá DEV!');
+    return res.status(StatusCodes.OK).send('Olá DEV!');
 });
 
-router.post("/cidades", CidadesController.createBodyValidation, CidadesController.create);
+router.post("/cidades", CidadesController.createValidation, CidadesController.create);
 
-router.post("/teste", (req, res) => {
+/* router.post("/test", (req, res) => {
     console.log(req.body);
-    return res.status(StatusCodes.OK).json(req.body);
-});
+    return res.status(StatusCodes.ACCEPTED).json(req.body);
+}); */
 
 export { router };
